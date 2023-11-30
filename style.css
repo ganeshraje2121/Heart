@@ -1,9 +1,11 @@
 body {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     margin: 0;
+    
     background-color: #f0f0f0;
 }
 
@@ -11,12 +13,21 @@ body {
     width: 100px;
     height: 100px;
     background-color: red;
-    position: absolute;
-    transform: rotate(-45deg);
-    animation: heartbeat 1s infinite;
-    transform: rotate(45deg);
+   
+    margin-right: 40.8px;
+    transform: rotate(-135deg);
+    animation: heartbeat 4s infinite;
+    
 }
-
+.heart2 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    
+    transform: rotate(45deg);
+    animation: heartbeat2 4s infinite;
+    
+}
 .heart::before,
 .heart::after {
     content: "";
@@ -24,7 +35,7 @@ body {
     height: 100px;
     background-color: red;
     border-radius: 100%;
-    position:absolute
+    position: absolute;
 }
 .heart::before {
     top: -45px;
@@ -34,14 +45,53 @@ body {
     top: 0;
     left: 45px;
 }
+.heart2::before,
+.heart2::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 100%;
+    position: absolute;
+}
+.heart2::before {
+    top: -45px;
+    left: 0px;
+}
+.heart2::after {
+    top: 0;
+    left: 45px;
+}
 @keyframes heartbeat {
     0%, 100% {
-        transform: scale(1);
+        transform: rotate(-135deg) scale(1) ;
     }
     50% {
-        transform: scale(1.1);
+        transform: rotate(225deg) scale(1.5);
     }
-}
 
+}
+@keyframes heartbeat3 {
+        0%, 100% {
+            transform: scale(1);
+            
+        }
+        50% {
+            
+            transform: scale(1.2);
+        }
+    
+}
+@keyframes heartbeat2 {
+    0%, 100% {
+        transform: scale(1) rotate(45deg);
+    }
+    50% {
+        transform: scale(1.5) rotate(-315deg);
+        
+    }
+    
+    
+}
 
 
